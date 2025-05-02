@@ -1,0 +1,70 @@
+.formulario-agregar {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8efef;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+    color: white;
+    box-shadow: 0 0 10px rgb(141, 143, 143);
+    box-sizing: border-box;
+}
+
+.formulario-agregar * {
+    box-sizing: border-box;
+}
+
+.formulario-agregar input,
+.formulario-agregar button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.formulario-agregar input {
+    background-color: #c5c0c0;
+    color: rgb(68, 67, 67);
+}
+
+.formulario-agregar button {
+    background-color: rgb(142, 51, 202);
+    color: rgb(231, 221, 221);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.formulario-agregar button:hover {
+    background-color: rgb(173, 58, 226);
+}
+
+.mensaje {
+    margin-top: 10px;
+    color: rgb(71, 2, 44);
+}
+
+.volver-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #09090f;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 15px;
+    margin-left: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.volver-btn:hover {
+    background-color: rgb(165, 165, 167); 
+    transform: scale(1.05);
+}

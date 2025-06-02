@@ -14,6 +14,20 @@ export async function getUsuarios() {
   }
 }
 
+export async function getUsuario(id) {
+  try {
+    const response = await fetch(`${BASE_URL}/${id}`);
+    if (!response.ok) {
+      throw new Error('Error al obtener usuario');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error en getUsuario:', error);
+    return null;
+  }
+}
+
 export async function crearUsuario(usuario) {
   const res = await fetch(`${BASE_URL}/`, {
     method: 'POST',
@@ -30,7 +44,7 @@ export async function crearUsuario(usuario) {
   return await res.json();
 }
 
-export async function actualizarUsuario(id, usuario) {
+export async function editarUsuario(id, usuario) {
   const res = await fetch(`${BASE_URL}/${id}`, {
     method: 'PUT',
     headers: {

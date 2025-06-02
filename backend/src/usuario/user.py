@@ -55,6 +55,29 @@ def get_usuario():
 
     return jsonify(lista_usuarios)
 
+# metodo para el endpoint de get por id
+@usuario_bp.route('/<int:id>', methods=['GET'])
+def get_usuario_por_id(id):
+    
+    conexion = get_conexion()
+    cursor = conexion.cursor()
+
+    cursor.execute("SELECT id, nombre, edad FROM usuarios WHERE id = ?", (id,))
+    usuario = cursor.fetchone()
+
+    if not usuario:
+        return jsonify({"mensaje":"usuario no encontrado"}), 404
+
+    usuario_dict = {
+        'id': usuario[0],
+        'nombre': usuario[1],
+        'edad': usuario[2]
+    }
+
+    cursor.close()
+    conexion.close()
+
+    return jsonify(usuario_dict)
 
 # metodo para el endpoint de put
 

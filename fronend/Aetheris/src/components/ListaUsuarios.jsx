@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { getUsuarios } from '../api/usuarioApi';
+import React, { use, useEffect, useState } from 'react';
+import { getUsuarios,eliminarUsuario} from '../api/usuarioApi';
 import './ListaUsuario.css';
 
 const ListaUsuarios = () => {
@@ -33,7 +33,21 @@ const ListaUsuarios = () => {
                         <h3>{u.nombre}</h3>
                         <p><strong>ID:</strong> {index + 1}</p>
                         <p><strong>Edad:</strong> {u.edad} años</p>
-            
+
+                        <button className='eliminar-bttn' onClick={async () => {
+                            if (window.confirm(`¿Estás seguro de eliminar al usuario ${u.nombre}?`)) {
+                                await eliminarUsuario(u.id);
+                                setUsuarios(usuarios.filter(usuario => usuario.id !== u.id));
+                            }
+                        }}>
+                            Eliminar Usuario
+                        </button>
+                        
+                        <button className='editar-bttn'>Editar</button>
+                        {/* <button className='elegant-bttn' onClick={() => window.location.href = `/agregar?id=${u.id}`}>
+                            Editar Usuario
+                        </button> */}
+                    
                     </div>
                 ))}
             

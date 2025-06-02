@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { crearUsuario } from '../api/usuarioApi';
 import './AgregarUsuario.css';
 
-
 const AgregarUsuario = () => {
     const [nombre, setNombre] = useState('');
     const [edad, setEdad] = useState('');
@@ -10,7 +9,7 @@ const AgregarUsuario = () => {
     const [cargando, setCargando] = useState(false);
 
     const manejarEnvio = async (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
 
         if (!nombre.trim() || isNaN(edad) || edad <= 0) {
             setMensaje("Por favor, ingresa un nombre válido y una edad mayor a 0");
@@ -31,18 +30,22 @@ const AgregarUsuario = () => {
     };
 
     return (
-        <div>
-
-            <div>
-                <button className='volver-btn' onClick={()=> window.location.href = '/'}>
-                    Volver a la lista de usuarios
-                </button>
+        <div className="contenedor-agregar-usuario">
+            <div className="vista-previa">
+                <div className="carta-previa">
+                    <h3>{nombre || 'Nombre del usuario'}</h3>
+                    <p>Edad: {edad || '--'}</p>
+                    {cargando && <div className="cargando-texto">Creando usuario...</div>}
+                </div>
             </div>
 
-            <div className="formulario-agregar">
-                <h2>Agregar Usuario</h2>
+            <div className="formulario-derecha">
+                <button className="volver-simple" onClick={() => window.location.href = '/List'}>
+                    ← Volver a lista
+                </button>
 
-                <form onSubmit={manejarEnvio}>
+                <h2>Agregar Usuario</h2>
+                <form onSubmit={manejarEnvio} className="formulario-estilizado">
                     <input
                         type="text"
                         placeholder="Nombre"
@@ -59,11 +62,9 @@ const AgregarUsuario = () => {
                         {cargando ? "Agregando..." : "Agregar"}
                     </button>
                 </form>
-
                 {mensaje && <p className="mensaje">{mensaje}</p>}
             </div>
         </div>
-    
     );
 };
 

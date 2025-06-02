@@ -1,70 +1,131 @@
-.formulario-agregar {
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f8efef;
-    border-radius: 15px;
-    max-width: 400px;
-    width: 90%;
-    color: white;
-    box-shadow: 0 0 10px rgb(141, 143, 143);
-    box-sizing: border-box;
+.contenedor-agregar-usuario {
+    display: flex;
+    min-height: 100vh;
+    background: #fff;
+    color: #222;
+    padding: 40px;
+    gap: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: flex-start;
 }
 
-.formulario-agregar * {
-    box-sizing: border-box;
+.vista-previa {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 10px;
 }
 
-.formulario-agregar input,
-.formulario-agregar button {
-    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
+.carta-previa {
+    background: #fff;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 24px 36px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    text-align: center;
+    min-width: 300px;
+    transition: all 0.3s;
+    align-self: flex-start;
+}
+
+.carta-previa h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #111;
+}
+
+.carta-previa p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #444;
+}
+
+.cargando-texto {
+    margin-top: 10px;
+    font-style: italic;
+    color: #888;
+}
+
+.divisor-vertical {
+    width: 2px;
+    background: linear-gradient(to bottom, #222 0%, #fff 100%);
+    margin: 0 32px;
+    border-radius: 2px;
+    min-height: 400px;
+    align-self: stretch;
+}
+
+.formulario-derecha {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.volver-simple {
+    align-self: flex-start;
+    margin-bottom: 20px;
+    background: none;
+    color: #222;
+    border: 1px solid #222;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.volver-simple:hover {
+    background: #222;
+    color: #fff;
+}
+
+.formulario-derecha h2 {
+    font-size: 28px;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.formulario-estilizado {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.formulario-estilizado input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #222;
+    background: #fff;
+    color: #222;
     font-size: 16px;
 }
 
-.formulario-agregar input {
-    background-color: #c5c0c0;
-    color: rgb(68, 67, 67);
+.formulario-estilizado input:focus {
+    outline: none;
+    border-color: #111;
+    box-shadow: 0 0 5px #1112;
 }
 
-.formulario-agregar button {
-    background-color: rgb(142, 51, 202);
-    color: rgb(231, 221, 221);
+.formulario-estilizado button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #222;
+    color: #fff;
     font-weight: bold;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.2s ease;
 }
 
-.formulario-agregar button:hover {
-    background-color: rgb(173, 58, 226);
+.formulario-estilizado button:hover {
+    background-color: #111;
 }
 
 .mensaje {
-    margin-top: 10px;
-    color: rgb(71, 2, 44);
-}
-
-.volver-btn {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #09090f;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    margin-top: 15px;
-    margin-left: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.volver-btn:hover {
-    background-color: rgb(165, 165, 167); 
-    transform: scale(1.05);
+    margin-top: 16px;
+    font-size: 15px;
+    color: #222;
 }

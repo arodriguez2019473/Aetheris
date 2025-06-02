@@ -1,0 +1,132 @@
+/* GENERAL */
+.principal-container {
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: none;
+  z-index: 100;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  text-shadow: none;
+  letter-spacing: 1px;
+}
+
+/* BUTTONS */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 0.7rem;
+}
+
+.navbar-item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  background-color: transparent;
+  border: 1px solid #bbb;
+  border-radius: 25px;
+  color: #222;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: none;
+}
+
+.navbar-button:hover {
+  background-color: #eee;
+  color: #111;
+  box-shadow: none;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 2.8rem;
+  left: 0;
+  background: #fff;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px #0001;
+  min-width: 160px;
+  animation: none;
+}
+
+.dropdown-link {
+  color: #222;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+  font-size: 0.95rem;
+}
+
+.dropdown-link:hover {
+  background-color: #eee;
+  color: #111;
+  padding-left: 1.6rem;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #bbb;
+  padding-bottom: 0.5rem;
+  animation: none;
+  text-shadow: none;
+}
+
+.main-subtitle {
+  font-size: 1.1rem;
+  max-width: 650px;
+  color: #555;
+  animation: none;
+  line-height: 1.6;
+}

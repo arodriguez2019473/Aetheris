@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getUsuario, editarUsuario } from '../api/usuarioApi'; // usa getUsuario
+import { getUsuario, editarUsuario } from '../api/usuarioApi';
 import './EditarUsuario.css';
 
 const ModalEditarUsuario = ({ id, onClose, onEditado }) => {
@@ -11,7 +11,7 @@ const ModalEditarUsuario = ({ id, onClose, onEditado }) => {
   useEffect(() => {
     const cargar = async () => {
       try {
-        const usuario = await getUsuario(id); // aquí también
+        const usuario = await getUsuario(id);
         if (usuario) {
           setNombre(usuario.nombre);
           setEdad(usuario.edad);

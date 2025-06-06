@@ -21,9 +21,15 @@ const ListaUsuarios = () => {
   return (
     <div className="contenedor-usuarios">
       <h2>Lista de Usuarios</h2>
+
+      <button className='volver-simple' onClick={() => navigate('/')}>
+        ← Volver al Inicio
+      </button>
+
       <button className='elegant-bttn' onClick={() => navigate('/agregar')}>
         Agregar Usuario
       </button>
+
 
       <div className="grid-usuarios">
         {usuarios.map((u, index) => (

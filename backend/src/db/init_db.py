@@ -22,3 +22,4 @@ def crear_tabla_usuarios():
 
 crear_tabla_usuarios()
 print("Tabla usuarios creada con éxito! 💥")
+

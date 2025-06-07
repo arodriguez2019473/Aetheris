@@ -1,0 +1,83 @@
+.form-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 1.2rem;
+    color: #000;
+    font-weight: 700;
+}
+
+.form-factura {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #000;
+}
+
+.form-group input {
+    padding: 0.5rem;
+    border: 1px solid #bbb;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    grid-column: span 2;
+    padding: 0.9rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 1.05rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background: #222;
+}
+
+.seleccion-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.seleccion-group label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #000;
+}
+
+.seleccion-group select {
+    padding: 0.5rem;
+    border: 1px solid #bbb;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    background: #fafafa;
+    transition: border-color 0.2s;
+}
+
+.seleccion-group select:focus {
+    border-color: #888;
+    outline: none;
+}

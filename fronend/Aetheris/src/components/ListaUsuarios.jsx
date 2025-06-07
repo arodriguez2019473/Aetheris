@@ -22,10 +22,11 @@ const ListaUsuarios = () => {
     <div className="contenedor-usuarios">
       <h2>Lista de Usuarios</h2>
 
-      <button className='volver-simple' onClick={() => navigate('/')}>
+      <button className='elegant-bttn' onClick={() => navigate('/')}>
         ← Volver al Inicio
       </button>
 
+      
       <button className='elegant-bttn' onClick={() => navigate('/agregar')}>
         Agregar Usuario
       </button>

@@ -24,7 +24,7 @@ const Principal = () => {
 
               <div className="dropdown-menu">
                 <a href="/List" className="dropdown-link">ListadosUsuario</a>
-                <a href="#" className="dropdown-link">Estadísticas</a>
+                <a href="/registroFacturas" className="dropdown-link">RegistroFacturas</a>
                 <a href="#" className="dropdown-link">Configuración</a>
               </div>
             )}

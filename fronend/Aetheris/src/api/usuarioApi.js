@@ -1,73 +1,43 @@
 const BASE_URL = 'http://localhost:5000/usuario';
 
-export async function getUsuarios() {
+async function request(endpoint = '', options = {}) {
   try {
-    const response = await fetch(BASE_URL);
-    if (!response.ok) {
-      throw new Error('Error al obtener usuarios');
-    }
-    const data = await response.json();
-    return data;
+    const res = await fetch(`${BASE_URL}${endpoint}`, options);
+    if (!res.ok) throw new Error(`Error en la petición: ${res.statusText}`);
+    return await res.json();
   } catch (error) {
-    console.error('Error en getUsuarios:', error);
-    return [];
+    console.error('API usuario error:', error);
+    // Retorna [] para listas, null para objetos, según el endpoint
+    if (options.method === 'GET' && !endpoint) return [];
+    if (options.method === 'GET') return null;
+    throw error;
   }
 }
 
-export async function getUsuario(id) {
-  try {
-    const response = await fetch(`${BASE_URL}/${id}`);
-    if (!response.ok) {
-      throw new Error('Error al obtener usuario');
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error en getUsuario:', error);
-    return null;
-  }
+export function getUsuarios() {
+  return request();
 }
 
-export async function crearUsuario(usuario) {
-  const res = await fetch(`${BASE_URL}/`, {
+export function getUsuario(id) {
+  return request(`/${id}`);
+}
+
+export function crearUsuario(usuario) {
+  return request('/', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(usuario)
   });
-
-  if (!res.ok) {
-    throw new Error('Error al crear usuario');
-  }
-
-  return await res.json();
 }
 
-export async function editarUsuario(id, usuario) {
-  const res = await fetch(`${BASE_URL}/${id}`, {
+export function editarUsuario(id, usuario) {
+  return request(`/${id}`, {
     method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(usuario)
   });
-
-  if (!res.ok) {
-    throw new Error('Error al actualizar usuario');
-  }
-
-  return await res.json();
 }
 
-export async function eliminarUsuario(id) {
-  const res = await fetch(`${BASE_URL}/${id}`, {
-    method: 'DELETE'
-  });
-
-  if (!res.ok) {
-    throw new Error('Error al eliminar usuario');
-  }
-
-  return await res.json();
-} 
+export function eliminarUsuario(id) {
+  return request(`/${id}`, { method: 'DELETE' });
+}

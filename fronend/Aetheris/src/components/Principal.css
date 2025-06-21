@@ -17,7 +17,6 @@
   padding: 1rem 2rem;
   background: #fff;
   border-bottom: 1px solid #eee;
-  box-shadow: none;
   z-index: 100;
 }
 
@@ -27,12 +26,25 @@
   gap: 1rem;
 }
 
-.navbar-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #222;
-  text-shadow: none;
-  letter-spacing: 1px;
+.navbar-logo-combo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-logo-image {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+  margin-right: 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-logo-image {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-right: 0.7rem;
+  }
 }
 
 /* BUTTONS */
@@ -40,30 +52,32 @@
   list-style: none;
   display: flex;
   gap: 0.7rem;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-item {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .navbar-button {
   padding: 0.5rem 1rem;
   font-size: 0.95rem;
-  background-color: transparent;
+  background: transparent;
   border: 1px solid #bbb;
   border-radius: 25px;
   color: #222;
   text-decoration: none;
   font-weight: bold;
   transition: background 0.2s, color 0.2s;
-  box-shadow: none;
+  cursor: pointer;
 }
 
 .navbar-button:hover {
-  background-color: #eee;
+  background: #eee;
   color: #111;
-  box-shadow: none;
 }
 
 /* DROPDOWN */
@@ -84,7 +98,6 @@
   flex-direction: column;
   box-shadow: 0 2px 8px #0001;
   min-width: 160px;
-  animation: none;
 }
 
 .dropdown-link {
@@ -92,16 +105,17 @@
   padding: 0.5rem 1.2rem;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.2s, color 0.2s;
   font-size: 0.95rem;
+  transition: background 0.2s, color 0.2s, padding-left 0.2s;
 }
 
 .dropdown-link:hover {
-  background-color: #eee;
+  background: #eee;
   color: #111;
   padding-left: 1.6rem;
 }
 
+/* MAIN CONTENT */
 .main-content {
   flex-grow: 1;
   display: flex;
@@ -119,14 +133,11 @@
   margin-bottom: 1rem;
   border-bottom: 2px solid #bbb;
   padding-bottom: 0.5rem;
-  animation: none;
-  text-shadow: none;
 }
 
-.main-subtitle {
+.main-subtit  le {
   font-size: 1.1rem;
   max-width: 650px;
   color: #555;
-  animation: none;
   line-height: 1.6;
 }

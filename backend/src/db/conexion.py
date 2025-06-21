@@ -1,14 +1,13 @@
-import sqlite3
-import os
+import os, psycopg2
+from urllib.parse import urlparse
 
-def get_conexion():
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-    ruta_db = os.path.join(base_dir, 'usuarios.db')
-    
-    return sqlite3.connect(ruta_db)
+def get_pg_conn():
+    return psycopg2.connect(
+        host="ep-empty-grass-a5c26h6b-pooler.us-east-2.aws.neon.tech",
+        port=5432,
+        user="neondb_owner",
+        password="npg_cg4vo9OSzfRt",
+        database="neondb",
+        sslmode="require",
+    )
 
-def registro_datos():
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-    ruta_db = os.path.join(base_dir, 'registro.db')
-
-    return sqlite3.connect(ruta_db)

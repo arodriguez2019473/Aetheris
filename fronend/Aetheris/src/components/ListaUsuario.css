@@ -11,13 +11,13 @@ body {
     max-width: 1200px;
     margin: auto;
 }
-h2 {
+/* h2 {
     text-align: center;
     color: #2c3e50;
     margin-bottom: 30px;
     font-size: 32px;
     font-weight: 600;
-}
+} */
 .grid-usuarios {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -150,4 +150,27 @@ h2 {
 .elegant-bttn:focus {
     background: #242223;
     color: #fff;
+}
+
+.navbar-usuarios {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.titulo-usuarios {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2c3e50;
+    padding-bottom: 10px;
+    animation: fadeIn 0.3s ease-in-out;
+    text-align: center;
+    flex: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }

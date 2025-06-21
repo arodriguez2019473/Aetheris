@@ -20,7 +20,17 @@ const ListaUsuarios = () => {
 
   return (
     <div className="contenedor-usuarios">
-      <h2>Lista de Usuarios</h2>
+
+      <nav className='navbar-usuarios'>
+      
+          <div className="navbar-logo">Aetheris</div>
+
+        <div className='titulo-usuarios'>
+            <p>Lista usuario</p>
+
+          </div>
+      </nav>
+
 
       <button className='elegant-bttn' onClick={() => navigate('/')}>
         ← Volver al Inicio
